@@ -514,7 +514,7 @@ async function init() {
 
   if (resetBtn) {
     resetBtn.addEventListener('click', () => {
-      const ok = confirm('Reset all treasure on this device, First Mate?');
+      const ok = confirm('Reset all treasure on this device, Jack?');
       if (!ok) return;
 
       visited = {};
