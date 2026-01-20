@@ -246,7 +246,7 @@ function setView(showStamps) {
   listView.classList.toggle('active', !showStamps);
   stampsView.classList.toggle('active', showStamps);
 
-  toggleBtn.textContent = showStamps ? 'Back to List' : 'My Treasure';
+  toggleBtn.textContent = showStamps ? 'Back to List' : 'My Stamps';
 
   // Only show Reset on the treasure (stamps) page
   if (resetBtn) resetBtn.style.display = showStamps ? '' : 'none';
