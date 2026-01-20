@@ -348,6 +348,18 @@ main{ padding:12px 10px 20px; }
 body.full-map .map-wrap.card{ height:calc(100vh - 140px); }
 body.full-map #map{ height:100% !important; }
 
+/* --- Overview map rounded bottom fix --- */
+.map-clip {
+  border-radius: 0 0 18px 18px; /* match card radius */
+  overflow: hidden;            /* CRITICAL */
+}
+
+/* ensure leaflet respects clipping */
+.map-clip .leaflet-container {
+  border-radius: inherit;
+}
+
+
 /* ==========================================================================
    PASSPORT (TREASURE) VIEW — ONE BIG STAMP PER PAGE
    ========================================================================== */
