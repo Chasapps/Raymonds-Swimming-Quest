@@ -172,7 +172,7 @@ function showTreasureOverlay({ title, subtitle, stampSrc, finale = false }) {
   card.className = 'treasure-card';
 
   card.innerHTML = `
-    <div class="treasure-sparkle">${finale ? '🎉🏴‍☠️✨' : '✨'}</div>
+    <div class="treasure-sparkle">${finale ? '🎉✨' : '✨'}</div>
     ${finale ? `<img class="raymond-img" src="${PIRATE_RAYMOND_SRC}" alt="Raymond pirate">` : ''}
     ${stampSrc ? `<img class="stamp-img" src="${stampSrc}" alt="Treasure stamp">` : ''}
     <div class="treasure-title">${title || ''}</div>
@@ -187,7 +187,7 @@ function showTreasureOverlay({ title, subtitle, stampSrc, finale = false }) {
   overlay.addEventListener('click', () => overlay.remove());
 
   // Auto-dismiss (slightly longer for finale)
-  const ms = finale ? 2200 : 1400;
+  const ms = finale ? 3000 : 1400;
   window.setTimeout(() => {
     if (overlay.isConnected) overlay.remove();
   }, ms);
