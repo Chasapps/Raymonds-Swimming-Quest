@@ -177,7 +177,7 @@ function showTreasureOverlay({ title, subtitle, stampSrc, finale = false }) {
     ${stampSrc ? `<img class="stamp-img" src="${stampSrc}" alt="Treasure stamp">` : ''}
     <div class="treasure-title">${title || ''}</div>
     ${subtitle ? `<div class="treasure-subtitle">${subtitle}</div>` : ''}
-    <div class="treasure-hint">tap anywhere</div>
+
   `;
 
   overlay.appendChild(card);
@@ -514,7 +514,7 @@ async function init() {
 
 if (resetBtn) {
   resetBtn.addEventListener('click', () => {
-    const ok = confirm('Reset all treasure on this device, Jack?');
+    const ok = confirm('Reset all Stamps, Jack?');
     if (!ok) return;
 
     // Clear data
