@@ -512,21 +512,26 @@ async function init() {
     toggleBtn.addEventListener('click', () => setView(!onStampsView));
   }
 
-  if (resetBtn) {
-    resetBtn.addEventListener('click', () => {
-      const ok = confirm('Reset all treasure on this device, Jack?');
-      if (!ok) return;
+if (resetBtn) {
+  resetBtn.addEventListener('click', () => {
+    const ok = confirm('Reset all treasure on this device, Jack?');
+    if (!ok) return;
 
-      visited = {};
-      writeVisited(visited);
-      currentStampsPage = 0;
-      writeStampsPage(currentStampsPage);
+    // Clear data
+    visited = {};
+    writeVisited(visited);
 
-      renderList();
-      renderStamps();
-      updateCount();
-    });
-  }
+    currentStampsPage = 0;
+    writeStampsPage(currentStampsPage);
+
+    // Mark a hard reset
+    sessionStorage.setItem('justReset', 'true');
+
+    // Hard exit to splash (no return to list)
+    window.location.replace('index.html');
+  });
+}
+
 
   if (btnUp) {
     btnUp.addEventListener('click', () => {
